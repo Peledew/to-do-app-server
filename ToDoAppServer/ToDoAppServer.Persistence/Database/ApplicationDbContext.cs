@@ -12,6 +12,13 @@ namespace ToDoAppServer.Persistence.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Relationships
+            modelBuilder.Entity<Project>()
+            .HasOne(p => p.Creator)
+            .WithMany(u => u.Projects)
+            .HasForeignKey(p => p.CreatorId)
+            .OnDelete(DeleteBehavior.SetNull);
+
             //Enum conversion
             modelBuilder.Entity<User>()
             .Property(u => u.Gender)
@@ -32,5 +39,6 @@ namespace ToDoAppServer.Persistence.Database
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 }

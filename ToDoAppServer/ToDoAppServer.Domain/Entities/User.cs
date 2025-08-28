@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using ToDoAppServer.Domain.Enums;
 
 namespace ToDoAppServer.Domain.Entities
@@ -33,5 +34,8 @@ namespace ToDoAppServer.Domain.Entities
         [Required]
         [EnumDataType(typeof(UserRole))]
         public required UserRole Role { get; set; }
+
+        [JsonIgnore]
+        public ICollection<Project>? Projects { get; set; }
     }
 }
