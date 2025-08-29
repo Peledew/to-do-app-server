@@ -3,25 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ToDoAppServer.Domain.Entities
 {
-    [Table("projects")]
-    public class Project
+    [Table("tags")]
+    public class Tag
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
-        public required string Name { get; set; }
+        [StringLength(20)]
+        public required string Title { get; set; }
 
         public string? Description { get; set; }
 
-        [Required]
-        public required DateTime DueDate { get; set; }
-
-        public int? CreatorId { get; set; }
-
-        public User? Creator { get; set; }
-
-        public ICollection<Task> Tasks { get; set; } = new List<Task>();
+        public ICollection<TaskTag> TaskTags { get; set; } = new List<TaskTag>();
     }
 }

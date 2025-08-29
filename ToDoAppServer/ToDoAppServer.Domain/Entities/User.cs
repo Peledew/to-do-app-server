@@ -36,6 +36,6 @@ namespace ToDoAppServer.Domain.Entities
         public required UserRole Role { get; set; }
 
         [JsonIgnore]
-        public ICollection<Project>? Projects { get; set; }
+        public ICollection<Project> Projects { get; set; } = new List<Project>();
     }
 }
