@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ToDoAppServer.Domain.Enums
+﻿namespace ToDoAppServer.Domain.Enums
 {
     public enum UserGender
     {

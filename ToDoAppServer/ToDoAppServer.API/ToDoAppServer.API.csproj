@@ -12,4 +12,16 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoAppServer.Application\ToDoAppServer.Application.csproj" />
+    <ProjectReference Include="..\ToDoAppServer.Persistence\ToDoAppServer.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
